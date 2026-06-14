@@ -1,0 +1,4 @@
+payload:
+  - DOMAIN-SUFFIX,tabbit-ai.com
+  - PROCESS-NAME-WILDCARD,QQ*
+  - PROCESS-NAME-WILDCARD,nearby_share*
