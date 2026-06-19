@@ -1,0 +1,3 @@
+[submodule "dotfiles/mpv/.config/mpv/scripts/dotfiles/mpv/.config/mpv/scripts/uosc_danmaku"]
+	path = dotfiles/mpv/.config/mpv/scripts/dotfiles/mpv/.config/mpv/scripts/uosc_danmaku
+	url = https://github.com/Tony15246/uosc_danmaku.git
