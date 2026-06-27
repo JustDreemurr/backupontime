@@ -285,8 +285,10 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+//spawn-at-startup "waybar"
 spawn-at-startup "mako"
+spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -353,6 +355,20 @@ window-rule {
     default-floating-position x=50 y=0 relative-to="right"
 }
 
+window-rule {
+    match app-id=r#"steam"# title="notificationtoasts"
+    open-floating true
+    open-focused false
+    default-floating-position x=0 y=0 relative-to="bottom-right"
+}
+
+/-window-rule {
+    match app-id=r#"steam"# title="启动中"
+    open-floating true
+    open-focused false
+    default-floating-position x=1920 y=1080
+}
+
 /-window-rule {
     match app-id=r#"open-orpheus$"#
     open-floating true
@@ -376,6 +392,10 @@ window-rule {
 window-rule {
     geometry-corner-radius 16
     clip-to-geometry true
+}
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
 }
 
 binds {
@@ -428,7 +448,7 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    Mod+Tab repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
 
