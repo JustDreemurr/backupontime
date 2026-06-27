@@ -3,7 +3,7 @@ on  = "M"
 run = "plugin mount"
 
 [[mgr.prepend_keymap]]
-on = ["g" ,"y"]
+on = ["c" ,"y"]
 run = "plugin wl-clipboard"
 
 [[mgr.prepend_keymap]]
@@ -11,3 +11,27 @@ on = ["c" , "s"]
 run  = "plugin what-size"
 desc = "Calc size of selection or cwd"
 
+[[mgr.prepend_keymap]]
+on = ["x","x","x"]
+run = "plugin lin-decompress -- --no-password"
+desc = "Extract hovered."
+
+[[mgr.prepend_keymap]]
+on = ["x","x","p"]
+run = "plugin lin-decompress"
+desc = "Extract hovered. Password"
+
+[[mgr.prepend_keymap]]
+on = ["x","x","a"]
+run = "plugin lin-decompress -- --no-hover --tabselect=all"
+desc = "Extract selected in all tabs"
+
+[[mgr.prepend_keymap]]
+on = ["x","x","A"]
+run = "plugin lin-decompress -- --tabselect=all"
+desc = "Extract selected in all tabs. Hovered included"
+
+[[mgr.prepend_keymap]]
+on = ["x","x","c"]
+run = "plugin lin-decompress -- --no-hover --tabselect=current"
+desc = "Extract selected in current tab only"
