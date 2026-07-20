@@ -106,7 +106,7 @@ input {
     position x=1280 y=0
 }
 output "DP-2" {
-    
+    mode "3840x2160@144.000" 
     // 缩放比例：1.0 为不缩放，高分屏（如2K/4K）可以设为 1.25, 1.5, 2.0 等
     scale 1.7
     
@@ -114,7 +114,7 @@ output "DP-2" {
     position x=0 y=0
     focus-at-startup
 }
-output "HDMI-A-2" {
+/-output "HDMI-A-2" {
     scale 2
     transform "90"
     // 物理位置：x=0 意味着水平对齐，y=-1440 意味着它在笔记本（内屏）的上方
@@ -129,6 +129,8 @@ layout {
     // Set gaps around windows in logical pixels.
     gaps 16
 
+    // Set transparent workspace background color so you see the backdrop at all times.
+    background-color "transparent"
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -286,9 +288,9 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 //spawn-at-startup "waybar"
-spawn-at-startup "mako"
-spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+//spawn-at-startup "mako"
+//spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -362,17 +364,54 @@ window-rule {
     default-floating-position x=0 y=0 relative-to="bottom-right"
 }
 
-/-window-rule {
-    match app-id=r#"steam"# title="启动中"
+window-rule {
+    match app-id=r#"Nutstore"#
+    exclude title="坚果云"
     open-floating true
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 800; }
+    // 窗口为固定尺寸 505x341(应用自报上限,尺寸规则无效),居中于工作区 2258x1240
+    default-floating-position x=877 y=449
+}
+
+
+
+window-rule {
+    draw-border-with-background false
+}
+
+window-rule {
+    exclude app-id="^mpv$"
+    background-effect {
+        blur true
+    }
+    opacity 0.88
+}
+
+window-rule {
+    match app-id=r#"steam"# title="登陆"
     open-focused false
-    default-floating-position x=1920 y=1080
+    default-floating-position x=0 y=0 relative-to="top"
 }
 
 /-window-rule {
     match app-id=r#"open-orpheus$"#
     open-floating true
     open-focused false
+}
+
+// Set the regular wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-wallpaper*"
+  place-within-backdrop true
+}
+
+
+// Optionally, disable the workspace shadows in the overview.
+overview {
+  workspace-shadow {
+    off
+  }
 }
 
 // Example: block out two password managers from screen capture.
@@ -396,6 +435,7 @@ window-rule {
 debug {
   // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
+  // render-drm-device "/dev/dri/renderD128"
 }
 
 binds {
@@ -415,7 +455,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -600,7 +640,7 @@ binds {
     // Consume one window from the right to the bottom of the focused column.
     Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
-    Mod+Period { expel-window-from-column; }
+    //Mod+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
@@ -635,7 +675,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
+    Mod+V  { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
@@ -678,5 +718,6 @@ binds {
     Mod+Shift+X {
         spawn-sh r#"notify-send "当前窗口状态" "$(niri msg -j focused-window | jq -r '"标题: \(.title)\n应用: \(.app_id)\n大小: \(.layout.window_size[0])x\(.layout.window_size[1])\nPID: \(.pid)"')""#
     }
+    Mod+Period  { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
 }
 

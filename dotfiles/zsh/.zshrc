@@ -141,4 +141,7 @@ zle -N prepend-sudo
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 export EDITOR="nvim"
+export PATH=$PATH:/opt/rocm/bin/
+export LANG=en_US.UTF-8
 cd ~
+alias quadlet='/usr/lib/podman/quadlet'

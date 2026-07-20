@@ -1,0 +1,917 @@
+# : Manager [[[
+
+[mgr]
+cwd = { fg = "#f2f2f3" }
+
+# Find
+find_keyword = { fg = "#fd4663", bold = true, italic = true, underline = true }
+find_position = { fg = "#fd4663", bold = true, italic = true }
+
+# Marker
+marker_copied = { fg = "#3b04a7", bg = "#3b04a7" }
+marker_cut = { fg = "#3b04a7", bg = "#3b04a7" }
+marker_marked = { fg = "#fd4663", bg = "#fd4663" }
+marker_selected = { fg = "#9a6fef", bg = "#9a6fef" }
+
+# Count
+count_copied = { fg = "#dfd1fa", bg = "#3b04a7" }
+count_cut = { fg = "#dfd1fa", bg = "#3b04a7" }
+count_selected = { fg = "#182125", bg = "#9a6fef" }
+
+# Border
+border_style  = { fg = "#6fc4ef" }
+
+# : ]]]
+
+
+# : Status [[[
+
+[status]
+overall = { fg = "#6fc4ef" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Progress
+progress_label = { bold = true }
+progress_normal = { fg = "#6fc4ef", bg = "#062737" }
+progress_error = { fg = "#fd4663", bg = "#062737" }
+
+# Permissions
+perm_type = { fg = "#6f84ef" }
+perm_write = { fg = "#9a6fef" }
+perm_exec = { fg = "#fd4663" }
+perm_read = { fg = "#3b04a7" }
+perm_sep = { fg = "#0470a7" }
+
+# : ]]]
+
+
+# : Mode [[[
+
+[mode]
+
+normal_main = { bg = "#6fc4ef", fg = "#182125", bold = true }
+normal_alt  = { bg = "#083349", fg = "#afb4b6" }
+
+select_main = { bg = "#6f84ef", fg = "#182125", bold = true }
+select_alt  = { bg = "#083349", fg = "#afb4b6" }
+
+unset_main = { bg = "#9a6fef", fg = "#182125", bold = true }
+unset_alt  = { bg = "#083349", fg = "#afb4b6" }
+
+# : ]]]
+
+
+# : Input [[[
+
+[input]
+border = { fg = "#6fc4ef" }
+title = {}
+value = { fg = "#f2f2f3" }
+selected = { reversed = true }
+
+# : ]]]
+
+
+# : Tabs [[[
+
+[tabs]
+active = { fg = "#062737", bold = true, bg = "#6fc4ef" }
+inactive = { fg = "#6f84ef", bg = "#062737" }
+sep_inner = { open = "", close = "" }
+
+# : ]]]
+
+
+# : Completion [[[
+
+[cmp]
+border = { fg = "#6fc4ef", bg = "#182125" }
+
+# : ]]]
+
+
+# : Tasks [[[
+
+[tasks]
+border = { fg = "#6fc4ef" }
+title = {}
+hovered = { fg = "#3b04a7", underline = true }
+
+# : ]]]
+
+
+# : Which [[[
+
+[which]
+cols = 3
+mask = { bg = "#062737" }
+cand = { fg = "#6fc4ef" }
+rest = { fg = "#182125" }
+desc = { fg = "#f2f2f3" }
+separator = " ▶ "
+separator_style = { fg = "#f2f2f3" }
+
+# : ]]]
+
+# : Spotter [[[
+
+[spot]
+border   = { fg = "#6fc4ef" }
+title    = { fg = "#6fc4ef" }
+tbl_col  = { fg = "#f2f2f3" }
+tbl_cell = { fg = "#f2f2f3", bg = "#062737" }
+
+# : ]]]
+
+
+# : Help [[[
+
+[help]
+on = { fg = "#f2f2f3" }
+run = { fg = "#f2f2f3" }
+hovered = { reversed = true, bold = true }
+footer = { fg = "#182125", bg = "#6f84ef" }
+
+# : ]]]
+
+
+# : Notify [[[
+
+[notify]
+title_info = { fg = "#9a6fef" }
+title_warn = { fg = "#6fc4ef" }
+title_error = { fg = "#fd4663" }
+
+# : ]]]
+
+
+# : File-specific styles [[[
+
+[filetype]
+
+rules = [
+    # Images
+    { mime = "image/*", fg = "#94e2d5" },
+
+    # Media
+    { mime = "{audio,video}/*", fg = "#f9e2af" },
+
+    # Archives
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
+
+    # Documents
+    { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
+
+    # Special files
+    { mime = "*", is = "orphan", fg = "#fecdd4", bg = "#900017" },
+    { mime = "application/*exec*", fg = "#fd4663" },
+
+    # Fallback
+    { url = "*", fg = "#f2f2f3" },
+    { url = "*/", fg = "#6fc4ef" },
+]
+
+# : ]]]
+
+# : Icons {{{
+
+[icon]
+globs = []
+dirs  = [
+	{ name = ".config", text = "", fg = "#6fc4ef" },
+	{ name = ".git", text = "", fg = "#6fc4ef" },
+	{ name = ".github", text = "", fg = "#6fc4ef" },
+	{ name = ".npm", text = "", fg = "#6fc4ef" },
+	{ name = "Desktop", text = "", fg = "#6fc4ef" },
+	{ name = "Development", text = "", fg = "#6fc4ef" },
+	{ name = "Documents", text = "", fg = "#6fc4ef" },
+	{ name = "Downloads", text = "", fg = "#6fc4ef" },
+	{ name = "Library", text = "", fg = "#6fc4ef" },
+	{ name = "Movies", text = "", fg = "#6fc4ef" },
+	{ name = "Music", text = "", fg = "#6fc4ef" },
+	{ name = "Pictures", text = "", fg = "#6fc4ef" },
+	{ name = "Public", text = "", fg = "#6fc4ef" },
+	{ name = "Videos", text = "", fg = "#6fc4ef" },
+]
+files = [
+	{ name = ".babelrc", text = "", fg = "#6fc4ef" },
+	{ name = ".bash_profile", text = "", fg = "#6fc4ef" },
+	{ name = ".bashrc", text = "", fg = "#6fc4ef" },
+	{ name = ".clang-format", text = "", fg = "#6fc4ef" },
+	{ name = ".clang-tidy", text = "", fg = "#6fc4ef" },
+	{ name = ".codespellrc", text = "󰓆", fg = "#6fc4ef" },
+	{ name = ".condarc", text = "", fg = "#6fc4ef" },
+	{ name = ".dockerignore", text = "󰡨", fg = "#6fc4ef" },
+	{ name = ".ds_store", text = "", fg = "#6fc4ef" },
+	{ name = ".editorconfig", text = "", fg = "#6fc4ef" },
+	{ name = ".env", text = "", fg = "#6fc4ef" },
+	{ name = ".eslintignore", text = "", fg = "#6fc4ef" },
+	{ name = ".eslintrc", text = "", fg = "#6fc4ef" },
+	{ name = ".git-blame-ignore-revs", text = "", fg = "#6fc4ef" },
+	{ name = ".gitattributes", text = "", fg = "#6fc4ef" },
+	{ name = ".gitconfig", text = "", fg = "#6fc4ef" },
+	{ name = ".gitignore", text = "", fg = "#6fc4ef" },
+	{ name = ".gitlab-ci.yml", text = "", fg = "#6fc4ef" },
+	{ name = ".gitmodules", text = "", fg = "#6fc4ef" },
+	{ name = ".gtkrc-2.0", text = "", fg = "#6fc4ef" },
+	{ name = ".gvimrc", text = "", fg = "#6fc4ef" },
+	{ name = ".justfile", text = "", fg = "#6fc4ef" },
+	{ name = ".luacheckrc", text = "", fg = "#6fc4ef" },
+	{ name = ".luaurc", text = "", fg = "#6fc4ef" },
+	{ name = ".mailmap", text = "󰊢", fg = "#6fc4ef" },
+	{ name = ".nanorc", text = "", fg = "#6fc4ef" },
+	{ name = ".npmignore", text = "", fg = "#6fc4ef" },
+	{ name = ".npmrc", text = "", fg = "#6fc4ef" },
+	{ name = ".nuxtrc", text = "󱄆", fg = "#6fc4ef" },
+	{ name = ".nvmrc", text = "", fg = "#6fc4ef" },
+	{ name = ".pnpmfile.cjs", text = "", fg = "#6fc4ef" },
+	{ name = ".pre-commit-config.yaml", text = "󰛢", fg = "#6fc4ef" },
+	{ name = ".prettierignore", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.cjs", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.js", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.json", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.json5", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.mjs", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.toml", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.yaml", text = "", fg = "#6fc4ef" },
+	{ name = ".prettierrc.yml", text = "", fg = "#6fc4ef" },
+	{ name = ".pylintrc", text = "", fg = "#6fc4ef" },
+	{ name = ".settings.json", text = "", fg = "#6fc4ef" },
+	{ name = ".SRCINFO", text = "󰣇", fg = "#6fc4ef" },
+	{ name = ".vimrc", text = "", fg = "#6fc4ef" },
+	{ name = ".Xauthority", text = "", fg = "#6fc4ef" },
+	{ name = ".xinitrc", text = "", fg = "#6fc4ef" },
+	{ name = ".Xresources", text = "", fg = "#6fc4ef" },
+	{ name = ".xsession", text = "", fg = "#6fc4ef" },
+	{ name = ".zprofile", text = "", fg = "#6fc4ef" },
+	{ name = ".zshenv", text = "", fg = "#6fc4ef" },
+	{ name = ".zshrc", text = "", fg = "#6fc4ef" },
+	{ name = "_gvimrc", text = "", fg = "#6fc4ef" },
+	{ name = "_vimrc", text = "", fg = "#6fc4ef" },
+	{ name = "AUTHORS", text = "", fg = "#6fc4ef" },
+	{ name = "AUTHORS.txt", text = "", fg = "#6fc4ef" },
+	{ name = "brewfile", text = "", fg = "#6fc4ef" },
+	{ name = "bspwmrc", text = "", fg = "#6fc4ef" },
+	{ name = "build", text = "", fg = "#6fc4ef" },
+	{ name = "build.gradle", text = "", fg = "#6fc4ef" },
+	{ name = "build.zig.zon", text = "", fg = "#6fc4ef" },
+	{ name = "bun.lock", text = "", fg = "#6fc4ef" },
+	{ name = "bun.lockb", text = "", fg = "#6fc4ef" },
+	{ name = "cantorrc", text = "", fg = "#6fc4ef" },
+	{ name = "checkhealth", text = "󰓙", fg = "#6fc4ef" },
+	{ name = "cmakelists.txt", text = "", fg = "#6fc4ef" },
+	{ name = "code_of_conduct", text = "", fg = "#6fc4ef" },
+	{ name = "code_of_conduct.md", text = "", fg = "#6fc4ef" },
+	{ name = "commit_editmsg", text = "", fg = "#6fc4ef" },
+	{ name = "commitlint.config.js", text = "󰜘", fg = "#6fc4ef" },
+	{ name = "commitlint.config.ts", text = "󰜘", fg = "#6fc4ef" },
+	{ name = "compose.yaml", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "compose.yml", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "config", text = "", fg = "#6fc4ef" },
+	{ name = "containerfile", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "copying", text = "", fg = "#6fc4ef" },
+	{ name = "copying.lesser", text = "", fg = "#6fc4ef" },
+	{ name = "Directory.Build.props", text = "", fg = "#6fc4ef" },
+	{ name = "Directory.Build.targets", text = "", fg = "#6fc4ef" },
+	{ name = "Directory.Packages.props", text = "", fg = "#6fc4ef" },
+	{ name = "docker-compose.yaml", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "docker-compose.yml", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "dockerfile", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "eslint.config.cjs", text = "", fg = "#6fc4ef" },
+	{ name = "eslint.config.js", text = "", fg = "#6fc4ef" },
+	{ name = "eslint.config.mjs", text = "", fg = "#6fc4ef" },
+	{ name = "eslint.config.ts", text = "", fg = "#6fc4ef" },
+	{ name = "ext_typoscript_setup.txt", text = "", fg = "#6fc4ef" },
+	{ name = "favicon.ico", text = "", fg = "#6fc4ef" },
+	{ name = "fp-info-cache", text = "", fg = "#6fc4ef" },
+	{ name = "fp-lib-table", text = "", fg = "#6fc4ef" },
+	{ name = "FreeCAD.conf", text = "", fg = "#6fc4ef" },
+	{ name = "Gemfile", text = "", fg = "#6fc4ef" },
+	{ name = "gnumakefile", text = "", fg = "#6fc4ef" },
+	{ name = "go.mod", text = "", fg = "#6fc4ef" },
+	{ name = "go.sum", text = "", fg = "#6fc4ef" },
+	{ name = "go.work", text = "", fg = "#6fc4ef" },
+	{ name = "gradle-wrapper.properties", text = "", fg = "#6fc4ef" },
+	{ name = "gradle.properties", text = "", fg = "#6fc4ef" },
+	{ name = "gradlew", text = "", fg = "#6fc4ef" },
+	{ name = "groovy", text = "", fg = "#6fc4ef" },
+	{ name = "gruntfile.babel.js", text = "", fg = "#6fc4ef" },
+	{ name = "gruntfile.coffee", text = "", fg = "#6fc4ef" },
+	{ name = "gruntfile.js", text = "", fg = "#6fc4ef" },
+	{ name = "gruntfile.ts", text = "", fg = "#6fc4ef" },
+	{ name = "gtkrc", text = "", fg = "#6fc4ef" },
+	{ name = "gulpfile.babel.js", text = "", fg = "#6fc4ef" },
+	{ name = "gulpfile.coffee", text = "", fg = "#6fc4ef" },
+	{ name = "gulpfile.js", text = "", fg = "#6fc4ef" },
+	{ name = "gulpfile.ts", text = "", fg = "#6fc4ef" },
+	{ name = "hypridle.conf", text = "", fg = "#6fc4ef" },
+	{ name = "hyprland.conf", text = "", fg = "#6fc4ef" },
+	{ name = "hyprlandd.conf", text = "", fg = "#6fc4ef" },
+	{ name = "hyprlock.conf", text = "", fg = "#6fc4ef" },
+	{ name = "hyprpaper.conf", text = "", fg = "#6fc4ef" },
+	{ name = "hyprsunset.conf", text = "", fg = "#6fc4ef" },
+	{ name = "i18n.config.js", text = "󰗊", fg = "#6fc4ef" },
+	{ name = "i18n.config.ts", text = "󰗊", fg = "#6fc4ef" },
+	{ name = "i3blocks.conf", text = "", fg = "#6fc4ef" },
+	{ name = "i3status.conf", text = "", fg = "#6fc4ef" },
+	{ name = "index.theme", text = "", fg = "#6fc4ef" },
+	{ name = "ionic.config.json", text = "", fg = "#6fc4ef" },
+	{ name = "Jenkinsfile", text = "", fg = "#6fc4ef" },
+	{ name = "justfile", text = "", fg = "#6fc4ef" },
+	{ name = "kalgebrarc", text = "", fg = "#6fc4ef" },
+	{ name = "kdeglobals", text = "", fg = "#6fc4ef" },
+	{ name = "kdenlive-layoutsrc", text = "", fg = "#6fc4ef" },
+	{ name = "kdenliverc", text = "", fg = "#6fc4ef" },
+	{ name = "kritadisplayrc", text = "", fg = "#6fc4ef" },
+	{ name = "kritarc", text = "", fg = "#6fc4ef" },
+	{ name = "license", text = "", fg = "#6fc4ef" },
+	{ name = "license.md", text = "", fg = "#6fc4ef" },
+	{ name = "lxde-rc.xml", text = "", fg = "#6fc4ef" },
+	{ name = "lxqt.conf", text = "", fg = "#6fc4ef" },
+	{ name = "makefile", text = "", fg = "#6fc4ef" },
+	{ name = "mix.lock", text = "", fg = "#6fc4ef" },
+	{ name = "mpv.conf", text = "", fg = "#6fc4ef" },
+	{ name = "next.config.cjs", text = "", fg = "#6fc4ef" },
+	{ name = "next.config.js", text = "", fg = "#6fc4ef" },
+	{ name = "next.config.ts", text = "", fg = "#6fc4ef" },
+	{ name = "node_modules", text = "", fg = "#6fc4ef" },
+	{ name = "nuxt.config.cjs", text = "󱄆", fg = "#6fc4ef" },
+	{ name = "nuxt.config.js", text = "󱄆", fg = "#6fc4ef" },
+	{ name = "nuxt.config.mjs", text = "󱄆", fg = "#6fc4ef" },
+	{ name = "nuxt.config.ts", text = "󱄆", fg = "#6fc4ef" },
+	{ name = "package-lock.json", text = "", fg = "#6fc4ef" },
+	{ name = "package.json", text = "", fg = "#6fc4ef" },
+	{ name = "PKGBUILD", text = "", fg = "#6fc4ef" },
+	{ name = "platformio.ini", text = "", fg = "#6fc4ef" },
+	{ name = "playwright.config.cjs", text = "", fg = "#6fc4ef" },
+	{ name = "playwright.config.cts", text = "", fg = "#6fc4ef" },
+	{ name = "playwright.config.js", text = "", fg = "#6fc4ef" },
+	{ name = "playwright.config.mjs", text = "", fg = "#6fc4ef" },
+	{ name = "playwright.config.mts", text = "", fg = "#6fc4ef" },
+	{ name = "playwright.config.ts", text = "", fg = "#6fc4ef" },
+	{ name = "pnpm-lock.yaml", text = "", fg = "#6fc4ef" },
+	{ name = "pnpm-workspace.yaml", text = "", fg = "#6fc4ef" },
+	{ name = "pom.xml", text = "", fg = "#6fc4ef" },
+	{ name = "prettier.config.cjs", text = "", fg = "#6fc4ef" },
+	{ name = "prettier.config.js", text = "", fg = "#6fc4ef" },
+	{ name = "prettier.config.mjs", text = "", fg = "#6fc4ef" },
+	{ name = "prettier.config.ts", text = "", fg = "#6fc4ef" },
+	{ name = "prisma.config.mts", text = "", fg = "#6fc4ef" },
+	{ name = "prisma.config.ts", text = "", fg = "#6fc4ef" },
+	{ name = "procfile", text = "", fg = "#6fc4ef" },
+	{ name = "PrusaSlicer.ini", text = "", fg = "#6fc4ef" },
+	{ name = "PrusaSlicerGcodeViewer.ini", text = "", fg = "#6fc4ef" },
+	{ name = "py.typed", text = "", fg = "#6fc4ef" },
+	{ name = "QtProject.conf", text = "", fg = "#6fc4ef" },
+	{ name = "rakefile", text = "", fg = "#6fc4ef" },
+	{ name = "readme", text = "󰂺", fg = "#6fc4ef" },
+	{ name = "readme.md", text = "󰂺", fg = "#6fc4ef" },
+	{ name = "rmd", text = "", fg = "#6fc4ef" },
+	{ name = "robots.txt", text = "󰚩", fg = "#6fc4ef" },
+	{ name = "security", text = "󰒃", fg = "#6fc4ef" },
+	{ name = "security.md", text = "󰒃", fg = "#6fc4ef" },
+	{ name = "settings.gradle", text = "", fg = "#6fc4ef" },
+	{ name = "svelte.config.js", text = "", fg = "#6fc4ef" },
+	{ name = "sxhkdrc", text = "", fg = "#6fc4ef" },
+	{ name = "sym-lib-table", text = "", fg = "#6fc4ef" },
+	{ name = "tailwind.config.js", text = "󱏿", fg = "#6fc4ef" },
+	{ name = "tailwind.config.mjs", text = "󱏿", fg = "#6fc4ef" },
+	{ name = "tailwind.config.ts", text = "󱏿", fg = "#6fc4ef" },
+	{ name = "tmux.conf", text = "", fg = "#6fc4ef" },
+	{ name = "tmux.conf.local", text = "", fg = "#6fc4ef" },
+	{ name = "tsconfig.json", text = "", fg = "#6fc4ef" },
+	{ name = "unlicense", text = "", fg = "#6fc4ef" },
+	{ name = "vagrantfile", text = "", fg = "#6fc4ef" },
+	{ name = "vercel.json", text = "", fg = "#6fc4ef" },
+	{ name = "vite.config.cjs", text = "", fg = "#6fc4ef" },
+	{ name = "vite.config.cts", text = "", fg = "#6fc4ef" },
+	{ name = "vite.config.js", text = "", fg = "#6fc4ef" },
+	{ name = "vite.config.mjs", text = "", fg = "#6fc4ef" },
+	{ name = "vite.config.mts", text = "", fg = "#6fc4ef" },
+	{ name = "vite.config.ts", text = "", fg = "#6fc4ef" },
+	{ name = "vitest.config.cjs", text = "", fg = "#6fc4ef" },
+	{ name = "vitest.config.cts", text = "", fg = "#6fc4ef" },
+	{ name = "vitest.config.js", text = "", fg = "#6fc4ef" },
+	{ name = "vitest.config.mjs", text = "", fg = "#6fc4ef" },
+	{ name = "vitest.config.mts", text = "", fg = "#6fc4ef" },
+	{ name = "vitest.config.ts", text = "", fg = "#6fc4ef" },
+	{ name = "vlcrc", text = "󰕼", fg = "#6fc4ef" },
+	{ name = "webpack", text = "󰜫", fg = "#6fc4ef" },
+	{ name = "weston.ini", text = "", fg = "#6fc4ef" },
+	{ name = "workspace", text = "", fg = "#6fc4ef" },
+	{ name = "wrangler.jsonc", text = "", fg = "#6fc4ef" },
+	{ name = "wrangler.toml", text = "", fg = "#6fc4ef" },
+	{ name = "xdph.conf", text = "", fg = "#6fc4ef" },
+	{ name = "xmobarrc", text = "", fg = "#6fc4ef" },
+	{ name = "xmobarrc.hs", text = "", fg = "#6fc4ef" },
+	{ name = "xmonad.hs", text = "", fg = "#6fc4ef" },
+	{ name = "xorg.conf", text = "", fg = "#6fc4ef" },
+	{ name = "xsettingsd.conf", text = "", fg = "#6fc4ef" },
+]
+exts = [
+	{ name = "3gp", text = "", fg = "#6fc4ef" },
+	{ name = "3mf", text = "󰆧", fg = "#6fc4ef" },
+	{ name = "7z", text = "", fg = "#6fc4ef" },
+	{ name = "a", text = "", fg = "#6fc4ef" },
+	{ name = "aac", text = "", fg = "#6fc4ef" },
+	{ name = "ada", text = "", fg = "#6fc4ef" },
+	{ name = "adb", text = "", fg = "#6fc4ef" },
+	{ name = "ads", text = "", fg = "#6fc4ef" },
+	{ name = "ai", text = "", fg = "#6fc4ef" },
+	{ name = "aif", text = "", fg = "#6fc4ef" },
+	{ name = "aiff", text = "", fg = "#6fc4ef" },
+	{ name = "android", text = "", fg = "#6fc4ef" },
+	{ name = "ape", text = "", fg = "#6fc4ef" },
+	{ name = "apk", text = "", fg = "#6fc4ef" },
+	{ name = "apl", text = "", fg = "#6fc4ef" },
+	{ name = "app", text = "", fg = "#6fc4ef" },
+	{ name = "applescript", text = "", fg = "#6fc4ef" },
+	{ name = "asc", text = "󰦝", fg = "#6fc4ef" },
+	{ name = "asm", text = "", fg = "#6fc4ef" },
+	{ name = "ass", text = "󰨖", fg = "#6fc4ef" },
+	{ name = "astro", text = "", fg = "#6fc4ef" },
+	{ name = "avif", text = "", fg = "#6fc4ef" },
+	{ name = "awk", text = "", fg = "#6fc4ef" },
+	{ name = "azcli", text = "", fg = "#6fc4ef" },
+	{ name = "bak", text = "󰁯", fg = "#6fc4ef" },
+	{ name = "bash", text = "", fg = "#6fc4ef" },
+	{ name = "bat", text = "", fg = "#6fc4ef" },
+	{ name = "bazel", text = "", fg = "#6fc4ef" },
+	{ name = "bib", text = "󱉟", fg = "#6fc4ef" },
+	{ name = "bicep", text = "", fg = "#6fc4ef" },
+	{ name = "bicepparam", text = "", fg = "#6fc4ef" },
+	{ name = "bin", text = "", fg = "#6fc4ef" },
+	{ name = "blade.php", text = "", fg = "#6fc4ef" },
+	{ name = "blend", text = "󰂫", fg = "#6fc4ef" },
+	{ name = "blp", text = "󰺾", fg = "#6fc4ef" },
+	{ name = "bmp", text = "", fg = "#6fc4ef" },
+	{ name = "bqn", text = "", fg = "#6fc4ef" },
+	{ name = "brep", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "bz", text = "", fg = "#6fc4ef" },
+	{ name = "bz2", text = "", fg = "#6fc4ef" },
+	{ name = "bz3", text = "", fg = "#6fc4ef" },
+	{ name = "bzl", text = "", fg = "#6fc4ef" },
+	{ name = "c", text = "", fg = "#6fc4ef" },
+	{ name = "c++", text = "", fg = "#6fc4ef" },
+	{ name = "cache", text = "", fg = "#6fc4ef" },
+	{ name = "cast", text = "", fg = "#6fc4ef" },
+	{ name = "cbl", text = "", fg = "#6fc4ef" },
+	{ name = "cc", text = "", fg = "#6fc4ef" },
+	{ name = "ccm", text = "", fg = "#6fc4ef" },
+	{ name = "cfc", text = "", fg = "#6fc4ef" },
+	{ name = "cfg", text = "", fg = "#6fc4ef" },
+	{ name = "cfm", text = "", fg = "#6fc4ef" },
+	{ name = "cjs", text = "", fg = "#6fc4ef" },
+	{ name = "clj", text = "", fg = "#6fc4ef" },
+	{ name = "cljc", text = "", fg = "#6fc4ef" },
+	{ name = "cljd", text = "", fg = "#6fc4ef" },
+	{ name = "cljs", text = "", fg = "#6fc4ef" },
+	{ name = "cmake", text = "", fg = "#6fc4ef" },
+	{ name = "cob", text = "", fg = "#6fc4ef" },
+	{ name = "cobol", text = "", fg = "#6fc4ef" },
+	{ name = "coffee", text = "", fg = "#6fc4ef" },
+	{ name = "conda", text = "", fg = "#6fc4ef" },
+	{ name = "conf", text = "", fg = "#6fc4ef" },
+	{ name = "config.ru", text = "", fg = "#6fc4ef" },
+	{ name = "cow", text = "󰆚", fg = "#6fc4ef" },
+	{ name = "cp", text = "", fg = "#6fc4ef" },
+	{ name = "cpp", text = "", fg = "#6fc4ef" },
+	{ name = "cppm", text = "", fg = "#6fc4ef" },
+	{ name = "cpy", text = "", fg = "#6fc4ef" },
+	{ name = "cr", text = "", fg = "#6fc4ef" },
+	{ name = "crdownload", text = "", fg = "#6fc4ef" },
+	{ name = "cs", text = "󰌛", fg = "#6fc4ef" },
+	{ name = "csh", text = "", fg = "#6fc4ef" },
+	{ name = "cshtml", text = "󱦗", fg = "#6fc4ef" },
+	{ name = "cson", text = "", fg = "#6fc4ef" },
+	{ name = "csproj", text = "󰪮", fg = "#6fc4ef" },
+	{ name = "css", text = "", fg = "#6fc4ef" },
+	{ name = "csv", text = "", fg = "#6fc4ef" },
+	{ name = "cts", text = "", fg = "#6fc4ef" },
+	{ name = "cu", text = "", fg = "#6fc4ef" },
+	{ name = "cue", text = "󰲹", fg = "#6fc4ef" },
+	{ name = "cuh", text = "", fg = "#6fc4ef" },
+	{ name = "cxx", text = "", fg = "#6fc4ef" },
+	{ name = "cxxm", text = "", fg = "#6fc4ef" },
+	{ name = "d", text = "", fg = "#6fc4ef" },
+	{ name = "d.ts", text = "", fg = "#6fc4ef" },
+	{ name = "dart", text = "", fg = "#6fc4ef" },
+	{ name = "db", text = "", fg = "#6fc4ef" },
+	{ name = "dconf", text = "", fg = "#6fc4ef" },
+	{ name = "desktop", text = "", fg = "#6fc4ef" },
+	{ name = "diff", text = "", fg = "#6fc4ef" },
+	{ name = "dll", text = "", fg = "#6fc4ef" },
+	{ name = "doc", text = "󰈬", fg = "#6fc4ef" },
+	{ name = "Dockerfile", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "dockerignore", text = "󰡨", fg = "#6fc4ef" },
+	{ name = "docx", text = "󰈬", fg = "#6fc4ef" },
+	{ name = "dot", text = "󱁉", fg = "#6fc4ef" },
+	{ name = "download", text = "", fg = "#6fc4ef" },
+	{ name = "drl", text = "", fg = "#6fc4ef" },
+	{ name = "dropbox", text = "", fg = "#6fc4ef" },
+	{ name = "dump", text = "", fg = "#6fc4ef" },
+	{ name = "dwg", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "dxf", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "ebook", text = "", fg = "#6fc4ef" },
+	{ name = "ebuild", text = "", fg = "#6fc4ef" },
+	{ name = "edn", text = "", fg = "#6fc4ef" },
+	{ name = "eex", text = "", fg = "#6fc4ef" },
+	{ name = "ejs", text = "", fg = "#6fc4ef" },
+	{ name = "el", text = "", fg = "#6fc4ef" },
+	{ name = "elc", text = "", fg = "#6fc4ef" },
+	{ name = "elf", text = "", fg = "#6fc4ef" },
+	{ name = "elm", text = "", fg = "#6fc4ef" },
+	{ name = "eln", text = "", fg = "#6fc4ef" },
+	{ name = "env", text = "", fg = "#6fc4ef" },
+	{ name = "eot", text = "", fg = "#6fc4ef" },
+	{ name = "epp", text = "", fg = "#6fc4ef" },
+	{ name = "epub", text = "", fg = "#6fc4ef" },
+	{ name = "erb", text = "", fg = "#6fc4ef" },
+	{ name = "erl", text = "", fg = "#6fc4ef" },
+	{ name = "ex", text = "", fg = "#6fc4ef" },
+	{ name = "exe", text = "", fg = "#6fc4ef" },
+	{ name = "exs", text = "", fg = "#6fc4ef" },
+	{ name = "f#", text = "", fg = "#6fc4ef" },
+	{ name = "f3d", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "f90", text = "󱈚", fg = "#6fc4ef" },
+	{ name = "fbx", text = "󰆧", fg = "#6fc4ef" },
+	{ name = "fcbak", text = "", fg = "#6fc4ef" },
+	{ name = "fcmacro", text = "", fg = "#6fc4ef" },
+	{ name = "fcmat", text = "", fg = "#6fc4ef" },
+	{ name = "fcparam", text = "", fg = "#6fc4ef" },
+	{ name = "fcscript", text = "", fg = "#6fc4ef" },
+	{ name = "fcstd", text = "", fg = "#6fc4ef" },
+	{ name = "fcstd1", text = "", fg = "#6fc4ef" },
+	{ name = "fctb", text = "", fg = "#6fc4ef" },
+	{ name = "fctl", text = "", fg = "#6fc4ef" },
+	{ name = "fdmdownload", text = "", fg = "#6fc4ef" },
+	{ name = "feature", text = "", fg = "#6fc4ef" },
+	{ name = "fish", text = "", fg = "#6fc4ef" },
+	{ name = "flac", text = "", fg = "#6fc4ef" },
+	{ name = "flc", text = "", fg = "#6fc4ef" },
+	{ name = "flf", text = "", fg = "#6fc4ef" },
+	{ name = "fnl", text = "", fg = "#6fc4ef" },
+	{ name = "fodg", text = "", fg = "#6fc4ef" },
+	{ name = "fodp", text = "", fg = "#6fc4ef" },
+	{ name = "fods", text = "", fg = "#6fc4ef" },
+	{ name = "fodt", text = "", fg = "#6fc4ef" },
+	{ name = "frag", text = "", fg = "#6fc4ef" },
+	{ name = "fs", text = "", fg = "#6fc4ef" },
+	{ name = "fsi", text = "", fg = "#6fc4ef" },
+	{ name = "fsscript", text = "", fg = "#6fc4ef" },
+	{ name = "fsx", text = "", fg = "#6fc4ef" },
+	{ name = "gcode", text = "󰐫", fg = "#6fc4ef" },
+	{ name = "gd", text = "", fg = "#6fc4ef" },
+	{ name = "gemspec", text = "", fg = "#6fc4ef" },
+	{ name = "geom", text = "", fg = "#6fc4ef" },
+	{ name = "gif", text = "", fg = "#6fc4ef" },
+	{ name = "git", text = "", fg = "#6fc4ef" },
+	{ name = "glb", text = "", fg = "#6fc4ef" },
+	{ name = "gleam", text = "", fg = "#6fc4ef" },
+	{ name = "glsl", text = "", fg = "#6fc4ef" },
+	{ name = "gnumakefile", text = "", fg = "#6fc4ef" },
+	{ name = "go", text = "", fg = "#6fc4ef" },
+	{ name = "godot", text = "", fg = "#6fc4ef" },
+	{ name = "gpr", text = "", fg = "#6fc4ef" },
+	{ name = "gql", text = "", fg = "#6fc4ef" },
+	{ name = "gradle", text = "", fg = "#6fc4ef" },
+	{ name = "graphql", text = "", fg = "#6fc4ef" },
+	{ name = "gresource", text = "", fg = "#6fc4ef" },
+	{ name = "gv", text = "󱁉", fg = "#6fc4ef" },
+	{ name = "gz", text = "", fg = "#6fc4ef" },
+	{ name = "h", text = "", fg = "#6fc4ef" },
+	{ name = "haml", text = "", fg = "#6fc4ef" },
+	{ name = "hbs", text = "", fg = "#6fc4ef" },
+	{ name = "heex", text = "", fg = "#6fc4ef" },
+	{ name = "hex", text = "", fg = "#6fc4ef" },
+	{ name = "hh", text = "", fg = "#6fc4ef" },
+	{ name = "hpp", text = "", fg = "#6fc4ef" },
+	{ name = "hrl", text = "", fg = "#6fc4ef" },
+	{ name = "hs", text = "", fg = "#6fc4ef" },
+	{ name = "htm", text = "", fg = "#6fc4ef" },
+	{ name = "html", text = "", fg = "#6fc4ef" },
+	{ name = "http", text = "", fg = "#6fc4ef" },
+	{ name = "huff", text = "󰡘", fg = "#6fc4ef" },
+	{ name = "hurl", text = "", fg = "#6fc4ef" },
+	{ name = "hx", text = "", fg = "#6fc4ef" },
+	{ name = "hxx", text = "", fg = "#6fc4ef" },
+	{ name = "ical", text = "", fg = "#6fc4ef" },
+	{ name = "icalendar", text = "", fg = "#6fc4ef" },
+	{ name = "ico", text = "", fg = "#6fc4ef" },
+	{ name = "ics", text = "", fg = "#6fc4ef" },
+	{ name = "ifb", text = "", fg = "#6fc4ef" },
+	{ name = "ifc", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "ige", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "iges", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "igs", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "image", text = "", fg = "#6fc4ef" },
+	{ name = "img", text = "", fg = "#6fc4ef" },
+	{ name = "import", text = "", fg = "#6fc4ef" },
+	{ name = "info", text = "", fg = "#6fc4ef" },
+	{ name = "ini", text = "", fg = "#6fc4ef" },
+	{ name = "ino", text = "", fg = "#6fc4ef" },
+	{ name = "ipynb", text = "", fg = "#6fc4ef" },
+	{ name = "iso", text = "", fg = "#6fc4ef" },
+	{ name = "ixx", text = "", fg = "#6fc4ef" },
+	{ name = "jar", text = "", fg = "#6fc4ef" },
+	{ name = "java", text = "", fg = "#6fc4ef" },
+	{ name = "jl", text = "", fg = "#6fc4ef" },
+	{ name = "jpeg", text = "", fg = "#6fc4ef" },
+	{ name = "jpg", text = "", fg = "#6fc4ef" },
+	{ name = "js", text = "", fg = "#6fc4ef" },
+	{ name = "json", text = "", fg = "#6fc4ef" },
+	{ name = "json5", text = "", fg = "#6fc4ef" },
+	{ name = "jsonc", text = "", fg = "#6fc4ef" },
+	{ name = "jsx", text = "", fg = "#6fc4ef" },
+	{ name = "jwmrc", text = "", fg = "#6fc4ef" },
+	{ name = "jxl", text = "", fg = "#6fc4ef" },
+	{ name = "kbx", text = "󰯄", fg = "#6fc4ef" },
+	{ name = "kdb", text = "", fg = "#6fc4ef" },
+	{ name = "kdbx", text = "", fg = "#6fc4ef" },
+	{ name = "kdenlive", text = "", fg = "#6fc4ef" },
+	{ name = "kdenlivetitle", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_dru", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_mod", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_pcb", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_prl", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_pro", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_sch", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_sym", text = "", fg = "#6fc4ef" },
+	{ name = "kicad_wks", text = "", fg = "#6fc4ef" },
+	{ name = "ko", text = "", fg = "#6fc4ef" },
+	{ name = "kpp", text = "", fg = "#6fc4ef" },
+	{ name = "kra", text = "", fg = "#6fc4ef" },
+	{ name = "krz", text = "", fg = "#6fc4ef" },
+	{ name = "ksh", text = "", fg = "#6fc4ef" },
+	{ name = "kt", text = "", fg = "#6fc4ef" },
+	{ name = "kts", text = "", fg = "#6fc4ef" },
+	{ name = "lck", text = "", fg = "#6fc4ef" },
+	{ name = "leex", text = "", fg = "#6fc4ef" },
+	{ name = "less", text = "", fg = "#6fc4ef" },
+	{ name = "lff", text = "", fg = "#6fc4ef" },
+	{ name = "lhs", text = "", fg = "#6fc4ef" },
+	{ name = "lib", text = "", fg = "#6fc4ef" },
+	{ name = "license", text = "", fg = "#6fc4ef" },
+	{ name = "liquid", text = "", fg = "#6fc4ef" },
+	{ name = "lock", text = "", fg = "#6fc4ef" },
+	{ name = "log", text = "󰌱", fg = "#6fc4ef" },
+	{ name = "lrc", text = "󰨖", fg = "#6fc4ef" },
+	{ name = "lua", text = "", fg = "#6fc4ef" },
+	{ name = "luac", text = "", fg = "#6fc4ef" },
+	{ name = "luau", text = "", fg = "#6fc4ef" },
+	{ name = "m", text = "", fg = "#6fc4ef" },
+	{ name = "m3u", text = "󰲹", fg = "#6fc4ef" },
+	{ name = "m3u8", text = "󰲹", fg = "#6fc4ef" },
+	{ name = "m4a", text = "", fg = "#6fc4ef" },
+	{ name = "m4v", text = "", fg = "#6fc4ef" },
+	{ name = "magnet", text = "", fg = "#6fc4ef" },
+	{ name = "makefile", text = "", fg = "#6fc4ef" },
+	{ name = "markdown", text = "", fg = "#6fc4ef" },
+	{ name = "material", text = "", fg = "#6fc4ef" },
+	{ name = "md", text = "", fg = "#6fc4ef" },
+	{ name = "md5", text = "󰕥", fg = "#6fc4ef" },
+	{ name = "mdx", text = "", fg = "#6fc4ef" },
+	{ name = "mint", text = "󰌪", fg = "#6fc4ef" },
+	{ name = "mjs", text = "", fg = "#6fc4ef" },
+	{ name = "mk", text = "", fg = "#6fc4ef" },
+	{ name = "mkv", text = "", fg = "#6fc4ef" },
+	{ name = "ml", text = "", fg = "#6fc4ef" },
+	{ name = "mli", text = "", fg = "#6fc4ef" },
+	{ name = "mm", text = "", fg = "#6fc4ef" },
+	{ name = "mo", text = "", fg = "#6fc4ef" },
+	{ name = "mobi", text = "", fg = "#6fc4ef" },
+	{ name = "mojo", text = "", fg = "#6fc4ef" },
+	{ name = "mov", text = "", fg = "#6fc4ef" },
+	{ name = "mp3", text = "", fg = "#6fc4ef" },
+	{ name = "mp4", text = "", fg = "#6fc4ef" },
+	{ name = "mpp", text = "", fg = "#6fc4ef" },
+	{ name = "msf", text = "", fg = "#6fc4ef" },
+	{ name = "mts", text = "", fg = "#6fc4ef" },
+	{ name = "mustache", text = "", fg = "#6fc4ef" },
+	{ name = "nfo", text = "", fg = "#6fc4ef" },
+	{ name = "nim", text = "", fg = "#6fc4ef" },
+	{ name = "nix", text = "", fg = "#6fc4ef" },
+	{ name = "norg", text = "", fg = "#6fc4ef" },
+	{ name = "nswag", text = "", fg = "#6fc4ef" },
+	{ name = "nu", text = "", fg = "#6fc4ef" },
+	{ name = "o", text = "", fg = "#6fc4ef" },
+	{ name = "obj", text = "󰆧", fg = "#6fc4ef" },
+	{ name = "odf", text = "", fg = "#6fc4ef" },
+	{ name = "odg", text = "", fg = "#6fc4ef" },
+	{ name = "odin", text = "󰟢", fg = "#6fc4ef" },
+	{ name = "odp", text = "", fg = "#6fc4ef" },
+	{ name = "ods", text = "", fg = "#6fc4ef" },
+	{ name = "odt", text = "", fg = "#6fc4ef" },
+	{ name = "oga", text = "", fg = "#6fc4ef" },
+	{ name = "ogg", text = "", fg = "#6fc4ef" },
+	{ name = "ogv", text = "", fg = "#6fc4ef" },
+	{ name = "ogx", text = "", fg = "#6fc4ef" },
+	{ name = "opus", text = "", fg = "#6fc4ef" },
+	{ name = "org", text = "", fg = "#6fc4ef" },
+	{ name = "otf", text = "", fg = "#6fc4ef" },
+	{ name = "out", text = "", fg = "#6fc4ef" },
+	{ name = "part", text = "", fg = "#6fc4ef" },
+	{ name = "patch", text = "", fg = "#6fc4ef" },
+	{ name = "pck", text = "", fg = "#6fc4ef" },
+	{ name = "pcm", text = "", fg = "#6fc4ef" },
+	{ name = "pdf", text = "", fg = "#6fc4ef" },
+	{ name = "php", text = "", fg = "#6fc4ef" },
+	{ name = "pl", text = "", fg = "#6fc4ef" },
+	{ name = "pls", text = "󰲹", fg = "#6fc4ef" },
+	{ name = "ply", text = "󰆧", fg = "#6fc4ef" },
+	{ name = "pm", text = "", fg = "#6fc4ef" },
+	{ name = "png", text = "", fg = "#6fc4ef" },
+	{ name = "po", text = "", fg = "#6fc4ef" },
+	{ name = "pot", text = "", fg = "#6fc4ef" },
+	{ name = "pp", text = "", fg = "#6fc4ef" },
+	{ name = "ppt", text = "󰈧", fg = "#6fc4ef" },
+	{ name = "pptx", text = "󰈧", fg = "#6fc4ef" },
+	{ name = "prisma", text = "", fg = "#6fc4ef" },
+	{ name = "pro", text = "", fg = "#6fc4ef" },
+	{ name = "ps1", text = "󰨊", fg = "#6fc4ef" },
+	{ name = "psb", text = "", fg = "#6fc4ef" },
+	{ name = "psd", text = "", fg = "#6fc4ef" },
+	{ name = "psd1", text = "󰨊", fg = "#6fc4ef" },
+	{ name = "psm1", text = "󰨊", fg = "#6fc4ef" },
+	{ name = "pub", text = "󰷖", fg = "#6fc4ef" },
+	{ name = "pxd", text = "", fg = "#6fc4ef" },
+	{ name = "pxi", text = "", fg = "#6fc4ef" },
+	{ name = "py", text = "", fg = "#6fc4ef" },
+	{ name = "pyc", text = "", fg = "#6fc4ef" },
+	{ name = "pyd", text = "", fg = "#6fc4ef" },
+	{ name = "pyi", text = "", fg = "#6fc4ef" },
+	{ name = "pyo", text = "", fg = "#6fc4ef" },
+	{ name = "pyw", text = "", fg = "#6fc4ef" },
+	{ name = "pyx", text = "", fg = "#6fc4ef" },
+	{ name = "qm", text = "", fg = "#6fc4ef" },
+	{ name = "qml", text = "", fg = "#6fc4ef" },
+	{ name = "qrc", text = "", fg = "#6fc4ef" },
+	{ name = "qss", text = "", fg = "#6fc4ef" },
+	{ name = "query", text = "", fg = "#6fc4ef" },
+	{ name = "R", text = "󰟔", fg = "#6fc4ef" },
+	{ name = "r", text = "󰟔", fg = "#6fc4ef" },
+	{ name = "rake", text = "", fg = "#6fc4ef" },
+	{ name = "rar", text = "", fg = "#6fc4ef" },
+	{ name = "rasi", text = "", fg = "#6fc4ef" },
+	{ name = "razor", text = "󱦘", fg = "#6fc4ef" },
+	{ name = "rb", text = "", fg = "#6fc4ef" },
+	{ name = "res", text = "", fg = "#6fc4ef" },
+	{ name = "resi", text = "", fg = "#6fc4ef" },
+	{ name = "rlib", text = "", fg = "#6fc4ef" },
+	{ name = "rmd", text = "", fg = "#6fc4ef" },
+	{ name = "rproj", text = "󰗆", fg = "#6fc4ef" },
+	{ name = "rs", text = "", fg = "#6fc4ef" },
+	{ name = "rss", text = "", fg = "#6fc4ef" },
+	{ name = "s", text = "", fg = "#6fc4ef" },
+	{ name = "sass", text = "", fg = "#6fc4ef" },
+	{ name = "sbt", text = "", fg = "#6fc4ef" },
+	{ name = "sc", text = "", fg = "#6fc4ef" },
+	{ name = "scad", text = "", fg = "#6fc4ef" },
+	{ name = "scala", text = "", fg = "#6fc4ef" },
+	{ name = "scm", text = "󰘧", fg = "#6fc4ef" },
+	{ name = "scss", text = "", fg = "#6fc4ef" },
+	{ name = "sh", text = "", fg = "#6fc4ef" },
+	{ name = "sha1", text = "󰕥", fg = "#6fc4ef" },
+	{ name = "sha224", text = "󰕥", fg = "#6fc4ef" },
+	{ name = "sha256", text = "󰕥", fg = "#6fc4ef" },
+	{ name = "sha384", text = "󰕥", fg = "#6fc4ef" },
+	{ name = "sha512", text = "󰕥", fg = "#6fc4ef" },
+	{ name = "sig", text = "󰘧", fg = "#6fc4ef" },
+	{ name = "signature", text = "󰘧", fg = "#6fc4ef" },
+	{ name = "skp", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "sldasm", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "sldprt", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "slim", text = "", fg = "#6fc4ef" },
+	{ name = "sln", text = "", fg = "#6fc4ef" },
+	{ name = "slnx", text = "", fg = "#6fc4ef" },
+	{ name = "slvs", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "sml", text = "󰘧", fg = "#6fc4ef" },
+	{ name = "so", text = "", fg = "#6fc4ef" },
+	{ name = "sol", text = "", fg = "#6fc4ef" },
+	{ name = "spec.js", text = "", fg = "#6fc4ef" },
+	{ name = "spec.jsx", text = "", fg = "#6fc4ef" },
+	{ name = "spec.ts", text = "", fg = "#6fc4ef" },
+	{ name = "spec.tsx", text = "", fg = "#6fc4ef" },
+	{ name = "spx", text = "", fg = "#6fc4ef" },
+	{ name = "sql", text = "", fg = "#6fc4ef" },
+	{ name = "sqlite", text = "", fg = "#6fc4ef" },
+	{ name = "sqlite3", text = "", fg = "#6fc4ef" },
+	{ name = "srt", text = "󰨖", fg = "#6fc4ef" },
+	{ name = "ssa", text = "󰨖", fg = "#6fc4ef" },
+	{ name = "ste", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "step", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "stl", text = "󰆧", fg = "#6fc4ef" },
+	{ name = "stories.js", text = "", fg = "#6fc4ef" },
+	{ name = "stories.jsx", text = "", fg = "#6fc4ef" },
+	{ name = "stories.mjs", text = "", fg = "#6fc4ef" },
+	{ name = "stories.svelte", text = "", fg = "#6fc4ef" },
+	{ name = "stories.ts", text = "", fg = "#6fc4ef" },
+	{ name = "stories.tsx", text = "", fg = "#6fc4ef" },
+	{ name = "stories.vue", text = "", fg = "#6fc4ef" },
+	{ name = "stp", text = "󰻫", fg = "#6fc4ef" },
+	{ name = "strings", text = "", fg = "#6fc4ef" },
+	{ name = "styl", text = "", fg = "#6fc4ef" },
+	{ name = "sub", text = "󰨖", fg = "#6fc4ef" },
+	{ name = "sublime", text = "", fg = "#6fc4ef" },
+	{ name = "suo", text = "", fg = "#6fc4ef" },
+	{ name = "sv", text = "󰍛", fg = "#6fc4ef" },
+	{ name = "svelte", text = "", fg = "#6fc4ef" },
+	{ name = "svg", text = "󰜡", fg = "#6fc4ef" },
+	{ name = "svgz", text = "󰜡", fg = "#6fc4ef" },
+	{ name = "svh", text = "󰍛", fg = "#6fc4ef" },
+	{ name = "swift", text = "", fg = "#6fc4ef" },
+	{ name = "t", text = "", fg = "#6fc4ef" },
+	{ name = "tbc", text = "󰛓", fg = "#6fc4ef" },
+	{ name = "tcl", text = "󰛓", fg = "#6fc4ef" },
+	{ name = "templ", text = "", fg = "#6fc4ef" },
+	{ name = "terminal", text = "", fg = "#6fc4ef" },
+	{ name = "test.js", text = "", fg = "#6fc4ef" },
+	{ name = "test.jsx", text = "", fg = "#6fc4ef" },
+	{ name = "test.ts", text = "", fg = "#6fc4ef" },
+	{ name = "test.tsx", text = "", fg = "#6fc4ef" },
+	{ name = "tex", text = "", fg = "#6fc4ef" },
+	{ name = "tf", text = "", fg = "#6fc4ef" },
+	{ name = "tfvars", text = "", fg = "#6fc4ef" },
+	{ name = "tgz", text = "", fg = "#6fc4ef" },
+	{ name = "tmpl", text = "", fg = "#6fc4ef" },
+	{ name = "tmux", text = "", fg = "#6fc4ef" },
+	{ name = "toml", text = "", fg = "#6fc4ef" },
+	{ name = "torrent", text = "", fg = "#6fc4ef" },
+	{ name = "tres", text = "", fg = "#6fc4ef" },
+	{ name = "ts", text = "", fg = "#6fc4ef" },
+	{ name = "tscn", text = "", fg = "#6fc4ef" },
+	{ name = "tsconfig", text = "", fg = "#6fc4ef" },
+	{ name = "tsx", text = "", fg = "#6fc4ef" },
+	{ name = "ttf", text = "", fg = "#6fc4ef" },
+	{ name = "twig", text = "", fg = "#6fc4ef" },
+	{ name = "txt", text = "󰈙", fg = "#6fc4ef" },
+	{ name = "txz", text = "", fg = "#6fc4ef" },
+	{ name = "typ", text = "", fg = "#6fc4ef" },
+	{ name = "typoscript", text = "", fg = "#6fc4ef" },
+	{ name = "ui", text = "", fg = "#6fc4ef" },
+	{ name = "v", text = "󰍛", fg = "#6fc4ef" },
+	{ name = "vala", text = "", fg = "#6fc4ef" },
+	{ name = "vert", text = "", fg = "#6fc4ef" },
+	{ name = "vh", text = "󰍛", fg = "#6fc4ef" },
+	{ name = "vhd", text = "󰍛", fg = "#6fc4ef" },
+	{ name = "vhdl", text = "󰍛", fg = "#6fc4ef" },
+	{ name = "vi", text = "", fg = "#6fc4ef" },
+	{ name = "vim", text = "", fg = "#6fc4ef" },
+	{ name = "vsh", text = "", fg = "#6fc4ef" },
+	{ name = "vsix", text = "", fg = "#6fc4ef" },
+	{ name = "vue", text = "", fg = "#6fc4ef" },
+	{ name = "wasm", text = "", fg = "#6fc4ef" },
+	{ name = "wav", text = "", fg = "#6fc4ef" },
+	{ name = "webm", text = "", fg = "#6fc4ef" },
+	{ name = "webmanifest", text = "", fg = "#6fc4ef" },
+	{ name = "webp", text = "", fg = "#6fc4ef" },
+	{ name = "webpack", text = "󰜫", fg = "#6fc4ef" },
+	{ name = "wma", text = "", fg = "#6fc4ef" },
+	{ name = "wmv", text = "", fg = "#6fc4ef" },
+	{ name = "woff", text = "", fg = "#6fc4ef" },
+	{ name = "woff2", text = "", fg = "#6fc4ef" },
+	{ name = "wrl", text = "󰆧", fg = "#6fc4ef" },
+	{ name = "wrz", text = "󰆧", fg = "#6fc4ef" },
+	{ name = "wv", text = "", fg = "#6fc4ef" },
+	{ name = "wvc", text = "", fg = "#6fc4ef" },
+	{ name = "x", text = "", fg = "#6fc4ef" },
+	{ name = "xaml", text = "󰙳", fg = "#6fc4ef" },
+	{ name = "xcf", text = "", fg = "#6fc4ef" },
+	{ name = "xcplayground", text = "", fg = "#6fc4ef" },
+	{ name = "xcstrings", text = "", fg = "#6fc4ef" },
+	{ name = "xls", text = "󰈛", fg = "#6fc4ef" },
+	{ name = "xlsx", text = "󰈛", fg = "#6fc4ef" },
+	{ name = "xm", text = "", fg = "#6fc4ef" },
+	{ name = "xml", text = "󰗀", fg = "#6fc4ef" },
+	{ name = "xpi", text = "", fg = "#6fc4ef" },
+	{ name = "xslt", text = "󰗀", fg = "#6fc4ef" },
+	{ name = "xul", text = "", fg = "#6fc4ef" },
+	{ name = "xz", text = "", fg = "#6fc4ef" },
+	{ name = "yaml", text = "", fg = "#6fc4ef" },
+	{ name = "yml", text = "", fg = "#6fc4ef" },
+	{ name = "zig", text = "", fg = "#6fc4ef" },
+	{ name = "zip", text = "", fg = "#6fc4ef" },
+	{ name = "zsh", text = "", fg = "#6fc4ef" },
+	{ name = "zst", text = "", fg = "#6fc4ef" },
+	{ name = "🔥", text = "", fg = "#6fc4ef" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "#6fc4ef" },
+	{ if = "link", text = "", fg = "#6fc4ef" },
+	{ if = "block", text = "", fg = "#6fc4ef" },
+	{ if = "char", text = "", fg = "#6fc4ef" },
+	{ if = "fifo", text = "", fg = "#6fc4ef" },
+	{ if = "sock", text = "", fg = "#6fc4ef" },
+	{ if = "sticky", text = "", fg = "#6fc4ef" },
+	{ if = "dummy", text = "", fg = "#6fc4ef" },
+
+	# Fallback
+	{ if = "dir", text = "", fg = "#6fc4ef" },
+	{ if = "exec", text = "", fg = "#6fc4ef" },
+	{ if = "!dir", text = "", fg = "#6fc4ef" },
+]
+
+# : }}}

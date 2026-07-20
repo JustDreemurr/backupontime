@@ -1,0 +1,10 @@
+# 背景透明度（0.0 到 1.0，越小越透明，建议 0.85 左右效果最好）
+background-opacity = 0.6
+
+# 背景模糊半径（数值越大越模糊，通常 15-20 比较合适）
+#background-blur-radius = 20
+theme = noctalia
+
+custom-shader = "~/.config/ghostty/shaders/cursor_smear.glsl"
+
+# window-decoration = none
