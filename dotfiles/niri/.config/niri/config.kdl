@@ -6,6 +6,9 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
+environment {
+	QT_FONT_DPI "144"	
+}
 input {
     keyboard {
         xkb {
@@ -362,6 +365,51 @@ window-rule {
     open-floating true
     open-focused false
     default-floating-position x=0 y=0 relative-to="bottom-right"
+}
+
+//FromOpenOrpheus
+window-rule {
+  match title="^Open Orpheus Menu$"
+
+  open-floating true
+
+  default-floating-position x=800 y=0 relative-to="top"
+  default-window-height { fixed 345; }
+  default-column-width { fixed 220; }
+
+  focus-ring {
+    off
+  }
+
+  border {
+    off
+  }
+}
+window-rule {
+  match title="^Open Orpheus Mini Player$"
+
+  open-floating true
+
+  focus-ring {
+    off
+  }
+
+  border {
+    off
+  }
+}
+window-rule {
+  match title="^Open Orpheus Lyrics$"
+
+  open-floating true
+
+  focus-ring {
+    off
+  }
+
+  border {
+    off
+  }
 }
 
 window-rule {
