@@ -145,3 +145,4 @@ export PATH=$PATH:/opt/rocm/bin/
 export LANG=en_US.UTF-8
 cd ~
 alias quadlet='/usr/lib/podman/quadlet'
+source /usr/share/nvm/init-nvm.sh
