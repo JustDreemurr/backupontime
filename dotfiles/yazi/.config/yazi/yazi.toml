@@ -7,21 +7,24 @@ edit = [
 	{ run = "$EDITOR %s", block = true, for = "unix" },
 	{ run = "%EDITOR% %s", block = true, for = "windows" },
 ]
+"edit(su mode)" = [
+	{ run = "sudo $EDITOR %s", block = true, for = "unix" },
+]
 pix = [
-	{ run = "pix %s", block = true, for = "unix" },
+	{ run = "pix %s", block = false, for = "unix" },
 ]
 open = [
-	{ run = "xdg-open %s1", desc = "Open" },
+	{ run = "xdg-open %s1", orphan = true, desc = "Open" },
 ]
 # ...
 [open]
 rules = [
-	{ mime = "text/*", use = "edit" },
+#	{ mime = "text/*", use = "edit" },
 	{ mime = "video/*", use = "play" },
 	{ mime = "audio/*", use = "play" },
 	{ mime = "image/*", use = "pix" },
-        { url = "*.json", use = "edit" },
-	{ url = "*", use = [ "open", "edit" ] },
+#        { url = "*.json", use = "edit" },
+	{ url = "*", use = [ "open", "edit" , "edit(su mode)"] },
 ]
 [plugin]
   prepend_preloaders = [
