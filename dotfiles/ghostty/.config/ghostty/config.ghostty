@@ -5,6 +5,9 @@ background-opacity = 0.6
 #background-blur-radius = 20
 theme = noctalia
 
+# Preserve Ghostty's embedded default font and override only CJK glyphs.
+font-codepoint-map = U+2E80-U+2FFF,U+3000-U+303F,U+31C0-U+31EF,U+3400-U+4DBF,U+4E00-U+9FFF,U+F900-U+FAFF,U+FE30-U+FE4F,U+FF00-U+FFEF,U+20000-U+323AF=Noto Sans Mono CJK SC
+
 custom-shader = "~/.config/ghostty/shaders/cursor_smear.glsl"
 
 # window-decoration = none
