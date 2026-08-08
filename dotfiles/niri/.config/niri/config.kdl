@@ -294,6 +294,7 @@ layout {
 //spawn-at-startup "mako"
 //spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
