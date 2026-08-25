@@ -2,4 +2,3 @@ payload:
   - DOMAIN-SUFFIX,tabbit-ai.com
   - DOMAIN-SUFFIX,www.fallenstars.me
   - PROCESS-NAME-WILDCARD,QQ*
-  - PROCESS-NAME-WILDCARD,nearby_share*
