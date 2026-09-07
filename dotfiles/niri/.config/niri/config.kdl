@@ -293,7 +293,9 @@ layout {
 //spawn-at-startup "waybar"
 //spawn-at-startup "mako"
 //spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
+//spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia"
+spawn-at-startup "xembedsniproxy"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -350,6 +352,18 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
+}
+
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"zen$"# title="^画中画$"
+    open-floating true
+    default-column-width { fixed 640; }
+    default-window-height { fixed 360; }
+    open-focused false
+    default-floating-position x=50 y=50 relative-to="bottom-right"
 }
 
 window-rule {
@@ -423,7 +437,20 @@ window-rule {
     default-floating-position x=877 y=449
 }
 
+window-rule {
+    match app-id=r#"eagle.exe"#
+    exclude title="Eagle"
+    match is-floating=true
+    default-floating-position x=1855 y=8
+}
 
+window-rule {
+    match app-id=r#"eagle.exe"#
+    match title="Eagle"
+    match is-floating=true
+    default-floating-position x=8 y=8 relative-to="bottom-right"
+    open-focused false
+}
 
 window-rule {
     draw-border-with-background false
@@ -455,6 +482,12 @@ layer-rule {
   place-within-backdrop true
 }
 
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
 
 // Optionally, disable the workspace shadows in the overview.
 overview {
@@ -504,7 +537,9 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+D hotkey-overlay-title="Run launcher" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+D hotkey-overlay-title="Run launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+V  { spawn-sh "noctalia msg panel-toggle clipboard"; }
+
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -724,7 +759,6 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V  { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
@@ -732,20 +766,6 @@ binds {
     // rather than stacked on top of each other.
     Mod+W { toggle-column-tabbed-display; }
 
-    // Actions to switch layouts.
-    // Note: if you uncomment these, make sure you do NOT have
-    // a matching layout switch hotkey configured in xkb options above.
-    // Having both at once on the same hotkey will break the switching,
-    // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
-    // Mod+Space       { switch-layout "next"; }
-    // Mod+Shift+Space { switch-layout "prev"; }
-
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
-
-    // Applications such as remote-desktop clients and software KVM switches may
-    // request that niri stops processing the keyboard shortcuts defined here
     // so they may, for example, forward the key presses as-is to a remote machine.
     // It's a good idea to bind an escape hatch to toggle the inhibitor,
     // so a buggy application can't hold your session hostage.
@@ -753,6 +773,7 @@ binds {
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
@@ -770,3 +791,5 @@ binds {
     Mod+Period  { spawn-sh "qs -c noctalia-shell ipc call launcher emoji"; }
 }
 
+
+include "noctalia.kdl"
