@@ -109,7 +109,7 @@ input {
     position x=1280 y=0
 }
 output "DP-2" {
-    mode "3840x2160@144.000" 
+    mode "3840x2160@160.000" 
     // 缩放比例：1.0 为不缩放，高分屏（如2K/4K）可以设为 1.25, 1.5, 2.0 等
     scale 1.7
     
@@ -295,7 +295,7 @@ layout {
 //spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 //spawn-at-startup "env" "QT_QPA_PLATFORMTHEME=gtk3" "qs" "-c" "noctalia-shell"
 spawn-at-startup "noctalia"
-spawn-at-startup "xembedsniproxy"
+//spawn-at-startup "xembedsniproxy"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
