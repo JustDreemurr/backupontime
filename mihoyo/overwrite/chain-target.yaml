@@ -1,0 +1,45 @@
+# proxy-providers 是对象，会合并新增 chain_exit，
+# 原有 provider1、provider2 会保留。
+proxy-providers:
+  chain_exit:
+    type: http
+
+    # 改成你维护的落地节点 YAML 订阅地址。
+    url: "http://192.168.100.11:5244/d/storage/yaml/att.yaml"
+
+    # 使用独立缓存路径。
+    path: ./proxy_provider/chain_exit.yaml
+    interval: 3600
+
+    # 仅表示下载订阅文件时直连。
+    proxy: DIRECT
+
+    health-check:
+      enable: false
+      url: https://cp.cloudflare.com/generate_204
+      interval: 600
+
+    override:
+      # 给这个 provider 中的所有节点统一设置中转。
+      dialer-proxy: "链式-中转"
+
+      # 区分这些节点与其他订阅中的同名节点。
+      additional-prefix: "链式落地 | "
++proxy-groups:
+  - name: "链式-中转"
+    type: select
+
+    # 同时引入原配置的 proxies 和 proxy-providers。
+    # 不会引入其他策略组。
+    include-all: true
+
+    # 排除落地节点，防止自己中转自己，形成循环。
+    exclude-filter: "^落地-"
+
+    # 可选：只允许指定地区的节点作为中转。
+    filter: "(?i)美国|USA"
+
+  - name: "链式-落地"
+    type: select
+    use:
+      - chain_exit
