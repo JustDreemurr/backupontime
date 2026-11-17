@@ -218,3 +218,4 @@ text/jscript=nvim.desktop;
 text/jscript.encode=nvim.desktop;
 inode/x-empty=nvim.desktop;
 application/x-empty=nvim.desktop;
+x-scheme-handler/magpie=magpie.desktop

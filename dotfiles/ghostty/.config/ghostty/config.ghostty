@@ -10,3 +10,5 @@ font-codepoint-map = U+2E80-U+2FFF,U+3000-U+303F,U+31C0-U+31EF,U+3400-U+4DBF,U+4
 custom-shader = "~/.config/ghostty/shaders/cursor_smear.glsl"
 
 # window-decoration = none
+
+keybind = shift+insert=paste_from_clipboard

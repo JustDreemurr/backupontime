@@ -143,7 +143,22 @@ eval "$(starship init zsh)"
 export EDITOR="nvim"
 export PATH=$PATH:/opt/rocm/bin/
 export LANG=en_US.UTF-8
-cd ~
+[[ $PWD == / ]] && cd ~
 alias quadlet='/usr/lib/podman/quadlet'
 alias vim=nvim
 source /usr/share/nvm/init-nvm.sh
+
+# 关闭事件流、实验配置、内部指标、Datadog
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+export DISABLE_TELEMETRY=1
+export DISABLE_ERROR_REPORTING=1
+# 单独确保不拉实验配置（中转域名就是随它上报的）
+# export DISABLE_GROWTHBOOK=1
+# 不在系统提示词里写入 git 用户名和近期提交
+export CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS=1
+
+# Claude Code debug locale: apply before startup, without changing the shell locale.
+claude() {
+  TZ=America/New_York LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LANGUAGE=en_US:en \
+    command claude "$@"
+}

@@ -389,7 +389,7 @@ window-rule {
   open-floating true
 
   default-floating-position x=800 y=0 relative-to="top"
-  default-window-height { fixed 345; }
+  default-window-height { fixed 380; }
   default-column-width { fixed 220; }
 
   focus-ring {
@@ -400,6 +400,19 @@ window-rule {
     off
   }
 }
+
+window-rule {
+  match title="^magpie panel$"
+
+  focus-ring {
+    off
+  }
+
+  border {
+    off
+  }
+}
+
 window-rule {
   match title="^Open Orpheus Mini Player$"
 
@@ -470,6 +483,12 @@ window-rule {
     default-floating-position x=0 y=0 relative-to="top"
 }
 
+window-rule {
+    match app-id=r#"^qoder-cn$"#
+    open-floating false
+    default-column-width { proportion 0.5; }
+}
+
 /-window-rule {
     match app-id=r#"open-orpheus$"#
     open-floating true
@@ -489,6 +508,12 @@ window-rule {
   default-window-height { fixed 920; }
 }
 
+window-rule {
+  match app-id="mark-shot" title="OCR$"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
 // Optionally, disable the workspace shadows in the overview.
 overview {
   workspace-shadow {
@@ -498,9 +523,10 @@ overview {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"^QQ$"#
 
     block-out-from "screen-capture"
 
@@ -540,7 +566,7 @@ binds {
     Mod+D hotkey-overlay-title="Run launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+V  { spawn-sh "noctalia msg panel-toggle clipboard"; }
 
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: Noctalia" { spawn-sh "noctalia msg session lock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
