@@ -156,6 +156,7 @@ export DISABLE_ERROR_REPORTING=1
 # export DISABLE_GROWTHBOOK=1
 # 不在系统提示词里写入 git 用户名和近期提交
 export CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS=1
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 
 # Claude Code debug locale: apply before startup, without changing the shell locale.
 claude() {
