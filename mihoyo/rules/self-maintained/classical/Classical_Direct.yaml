@@ -3,4 +3,5 @@ payload:
   - DOMAIN-SUFFIX,www.fallenstars.me
   - DOMAIN-SUFFIX,local.fallenstars.me
   - DOMAIN-SUFFIX,local.justdree.xyz
+  - DOMAIN-SUFFIX,cc.justdree.xyz
   - PROCESS-NAME-WILDCARD,QQ*
